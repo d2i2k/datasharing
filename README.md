@@ -13,80 +13,40 @@ The Human Activity Recognition database built from the recordings of 30 subjects
 - 'test/X_test.txt': Test set.
 - 'test/y_test.txt': Test labels.
 
-### Tidy Data Set
+### Raw Data
 
-1. Each variable you measure should be in one column
-1. Each different observation of that variable should be in a different row
-1. There should be one table for each "kind" of variable
-1. If you have multiple tables, they should include a column in the table that allows them to be linked
+The following raw data files are available for train.txt and test  files. Their descriptions are equivalent. 
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
+- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
+- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
-While these are the hard and fast rules, there are a number of other things that will make your data set much easier
-to handle. First is to include a row at the top of each data table/spreadsheet that contains full row names. 
-So if you measured age at diagnosis for patients, you would head that column with the name `AgeAtDiagnosis` instead
-of something like `ADx` or another abbreviation that may be hard for another person to understand. 
+### Code Book
 
+Feature Selection (feature_info.txt)
 
-Here is an example of how this would work from genomics. Suppose that for 20 people you have collected gene expression measurements with 
-[RNA-sequencing](http://en.wikipedia.org/wiki/RNA-Seq). You have also collected demographic and clinical information
-about the patients including their age, treatment, and diagnosis. You would have one table/spreadsheet that contains the clinical/demographic
-information. It would have four columns (patient id, age, treatment, diagnosis) and 21 rows (a row with variable names, then one row
-for every patient). You would also have one spreadsheet for the summarized genomic data. Usually this type of data
-is summarized at the level of the number of counts per exon. Suppose you have 100,000 exons, then you would have a
-table/spreadsheet that had 21 rows (a row for gene names, and one row for each patient) and 100,001 columns (one row for patient
-ids and one row for each data type). 
+From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-If you are sharing your data with the collaborator in Excel, the tidy data should be in one Excel file per table. They
-should not have multiple worksheets, no macros should be applied to the data, and no columns/cells should be highlighted. 
-Alternatively share the data in a [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) or [TAB-delimited](http://en.wikipedia.org/wiki/Tab-separated_values) text file.
+These signals were used to estimate variables of the feature vector for each pattern:  '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-
-### The code book
-
-For almost any data set, the measurements you calculate will need to be described in more detail than you will sneak
-into the spreadsheet. The code book contains this information. At minimum it should contain:
-
-1. Information about the variables (including units!) in the data set not contained in the tidy data 
-1. Information about the summary choices you made
-1. Information about the experimental study design you used
-
-In our genomics example, the analyst would want to know what the unit of measurement for each
-clinical/demographic variable is (age in years, treatment by name/dose, level of diagnosis and how heterogeneous). They 
-would also want to know how you picked the exons you used for summarizing the genomic data (UCSC/Ensembl, etc.). They
-would also want to know any other information about how you did the data collection/study design. For example,
-are these the first 20 patients that walked into the clinic? Are they 20 highly selected patients by some characteristic
-like age? Are they randomized to treatments? 
-
-A common format for this document is a Word file. There should be a section called "Study design" that has a thorough
-description of how you collected the data. There is a section called "Code book" that describes each variable and its
-units. 
-
-### How to code variables
-
-When you put variables into a spreadsheet there are several main categories you will run into depending on their [data type](http://en.wikipedia.org/wiki/Statistical_data_type):
-
-1. Continuous
-1. Ordinal
-1. Categorical
-1. Missing 
-1. Censored
-
-Continuous variables are anything measured on a quantitative scale that could be any fractional number. An example
-would be something like weight measured in kg. [Ordinal data](http://en.wikipedia.org/wiki/Ordinal_data) are data that have a fixed, small (< 100) number of levels but are ordered. 
-This could be for example survey responses where the choices are: poor, fair, good. [Categorical data](http://en.wikipedia.org/wiki/Categorical_variable) are data where there
-are multiple categories, but they aren't ordered. One example would be sex: male or female. [Missing data](http://en.wikipedia.org/wiki/Missing_data) are data
-that are missing and you don't know the mechanism. You should code missing values as `NA`. [Censored data](http://en.wikipedia.org/wiki/Censoring_(statistics\)) are data
-where you know the missingness mechanism on some level. Common examples are a measurement being below a detection limit
-or a patient being lost to follow-up. They should also be coded as `NA` when you don't have the data. But you should
-also add a new column to your tidy data called, "VariableNameCensored" which should have values of `TRUE` if censored 
-and `FALSE` if not. In the code book you should explain why those values are missing. It is absolutely critical to report
-to the analyst if there is a reason you know about that some of the data are missing. You should also not [impute](http://en.wikipedia.org/wiki/Imputation_(statistics\))/make up/
-throw away missing observations.
-
-In general, try to avoid coding categorical or ordinal variables as numbers. When you enter the value for sex in the tidy
-data, it should be "male" or "female". The ordinal values in the data set should be "poor", "fair", and "good" not 1, 2 ,3.
-This will avoid potential mixups about which direction effects go and will help identify coding errors. 
-
-Always encode every piece of information about your observations using text. For example, if you are storing data in Excel and use a form of colored text or cell background formatting to indicate information about an observation ("red variable entries were observed in experiment 1.") then this information will not be exported (and will be lost!) when the data is exported as raw text.  Every piece of data should be encoded as actual text that can be exported.  
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
 
 ### The instruction list/script
 
