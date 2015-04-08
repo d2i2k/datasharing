@@ -19,35 +19,35 @@ The following raw data files are available for train.txt and test files. Their d
  
 Feature Selection (feature_info.txt)
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. The time-domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. They were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.  Similarly, the acceleration signal was separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low-pass Butterworth filter with corner frequency of 0.3 Hz. 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
+tBodyAcc-XYZ,
+tGravityAcc-XYZ,
+tBodyAccJerk-XYZ,
+tBodyGyro-XYZ,
+tBodyGyroJerk-XYZ,
+tBodyAccMag,
+tGravityAccMag,
+tBodyAccJerkMag,
+tBodyGyroMag,
+tBodyGyroJerkMag,
+fBodyAcc-XYZ,
+fBodyAccJerk-XYZ,
+fBodyGyro-XYZ,
+fBodyAccMag,
+fBodyAccJerkMag,
+fBodyGyroMag,
 fBodyGyroJerkMag
 
 The set of variables estimated from these signals are: 
 
-mean(): Mean value
+mean(): Mean value,
 std(): Standard deviation
 
 Additional vectors obtained by averaging the signals in a signal window sample. These were used on the angle() variable:
 
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
+gravityMean,
+tBodyAccMean,
+tBodyAccJerkMean,
+tBodyGyroMean,
 tBodyGyroJerkMean
 
 The complete list of variables of each feature vector is available in 'features.txt'
