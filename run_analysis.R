@@ -55,7 +55,7 @@ tidyfeatures <- features[c(1:515,555:561),]
 names(tidyData) <- tidyfeatures[, 2] 
 ''''
 
-# Step 4a.  Index columns of tidyData to subset mean columns for each measurement.
+# Step 4a.  Index columns of tidyData to subset 24 mean columns for each measurement.
 
 '''{r}
 meanIndex <- grep("mean()", tidyfeatures[,2])
@@ -63,7 +63,7 @@ meanFreqIndex <- grep("meanFreq()", tidyfeatures[,2])
 Mean <- tidyData[, c(1:3,41:43,81:83,121:123,161:163,266:268,345:347,424:426)]
 '''
 
-# Step 4b.  Index columns of tidyData to subset standard deviation (std) columns for each measurement
+# Step 4b.  Index columns of tidyData to subset 24 standard deviation (SD) columns for each measurement
 
 '''{r}
 stdIndex <- grep("std()", tidyfeatures[,2])
