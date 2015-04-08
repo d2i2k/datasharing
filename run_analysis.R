@@ -60,14 +60,14 @@ names(tidyData) <- tidyfeatures[, 2]
 '''{r}
 meanIndex <- grep("mean()", tidyfeatures[,2])
 meanFreqIndex <- grep("meanFreq()", tidyfeatures[,2])
-Mean <- tidyData[, c(1:3,41:43,81:83,121:123,161:163,201,214,227,240,253,266:268,345:347,424:426,503)]
+Mean <- tidyData[, c(1:3,41:43,81:83,121:123,161:163,266:268,345:347,424:426)]
 '''
 
 # Step 4b.  Index columns of tidyData to subset standard deviation (std) columns for each measurement
 
 '''{r}
 stdIndex <- grep("std()", tidyfeatures[,2])
-SD <- tidyData[,stdIndex]
+SD <- tidyData[, c(4:6,44:46,84:86,124:126,164:166,269:271,348:350,427:429)]
 '''
 
 # Step 4c. Merge descriptive statistics with subjects and activities by combining Mean and SD subsets.
