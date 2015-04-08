@@ -2,7 +2,7 @@
 ---
 title: "run_analysis.R"
 author: "d2i2k"
-date: "Tuesday, April 07, 2015"
+date: "Wednesday, April 8, 2015"
 output: html_document
 ---
 
@@ -90,5 +90,5 @@ B <- melt(tidy)
 '''{r}
 tidyData <- dcast(B, Subject_Label ~ variable, fun.aggregate=mean)
 dim(tidyData)
-''' 
-write.table(tidyData, "./data/tidyData.txt")
+write.table(tidyData, file.path("C:","Users","d2i2k","Documents","data",”tidyData.txt"), row.name=FALSE)
+'''
