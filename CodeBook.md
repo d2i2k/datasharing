@@ -43,20 +43,20 @@ The final tidy dataset is a 180 by 49 matrix with 180 rows representing signal d
 
 Variable Names
 
-Column	Heading	Feature	 	 	Unit	Descriptive Statistic
--2)	tBodyAcc-mean()-X	Accelerometer, Body	(radians per sec)	Mean (x)
--3)	tBodyAcc-mean()-Y	Accelerometer, Body	(radians per sec)	Mean (y)
--4)	tBodyAcc-mean()-Z	Accelerometer, Body	(radians per sec)	Mean (z)
--5)	tBodyAcc-std()-X	Accelerometer, Body	(radians per sec)	Standard deviation (x)
--6)	tBodyAcc-std()-Y	Accelerometer, Body	(radians per sec)	Standard deviation (y)
--7)	tBodyAcc-std()-Z	Accelerometer, Body	(radians per sec)	Standard deviation (z)
+Column	|Heading	|Feature	 	 	|Unit	|Descriptive Statistic
+2	|tBodyAcc-mean()-X	|Accelerometer, Body	(radians per sec)	|Mean (x)
+3	|tBodyAcc-mean()-Y	|Accelerometer, Body	(radians per sec)	|Mean (y)
+4	|tBodyAcc-mean()-Z	|Accelerometer, Body	(radians per sec)	|Mean (z)
+5	|tBodyAcc-std()-X	|Accelerometer, Body	(radians per sec)	|Standard deviation (x)
+6	|tBodyAcc-std()-Y	|Accelerometer, Body	(radians per sec)	|Standard deviation (y)
+7	|tBodyAcc-std()-Z	|Accelerometer, Body	(radians per sec)	|Standard deviation (z)
 						
--8)	tGravityAcc-mean()-X	Accelerometer, Gravity	(radians per sec)	Mean (x)
--9)	tGravityAcc-mean()-Y	Accelerometer, Gravity	(radians per sec)	Mean (y)
--10)	tGravityAcc-mean()-Z	Accelerometer, Gravity	(radians per sec)	Mean (z)
--11)	tGravityAcc-std()-X	Accelerometer, Gravity	(radians per sec)	Standard deviation (x)
--12)	tGravityAcc-std()-Y	Accelerometer, Gravity	(radians per sec)	Standard deviation (y)
--13)	tGravityAcc-std()-Z	Accelerometer, Gravity	(radians per sec)	Standard deviation (z)
+8	|tGravityAcc-mean()-X	|Accelerometer, Gravity	(radians per sec)	|Mean (x)
+9	|tGravityAcc-mean()-Y	|Accelerometer, Gravity	(radians per sec)	|Mean (y)
+10	|tGravityAcc-mean()-Z	|Accelerometer, Gravity	(radians per sec)	|Mean (z)
+11	|tGravityAcc-std()-X	|Accelerometer, Gravity	(radians per sec)	|Standard deviation (x)
+12	|tGravityAcc-std()-Y	|Accelerometer, Gravity	(radians per sec)	|Standard deviation (y)
+13	|tGravityAcc-std()-Z	|Accelerometer, Gravity	(radians per sec)	|Standard deviation (z)
 						
 -14)	tBodyAccJerk-mean()-X	Accelerometer, Body, Jerk	(radians per sec)	Mean (x)
 -15)	tBodyAccJerk-mean()-Y	Accelerometer, Body, Jerk	(radians per sec)	Mean (y)
