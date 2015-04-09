@@ -42,7 +42,7 @@ Tidy Data Structure
 The final tidy dataset is a 180 by 49 matrix with 180 rows representing signal data on 30 subjects times six activities, and 49 columns corresponding to a unique identifier for Subject/Activity records, e.g., Subject 1_Walking, as well as 48 columns for means and standard deviations on each of the eight feature vectors.
 
  	Body Accelerometer (radians per second)
-- Subject_Activity|	   Mean(x)     |	  SD(x)       |	  Mean(y)     |	  SD(y)       |	  Mean(z)     |	  SD(z)
+- Subject_Activity|	     Mean(x)     |	    SD(x)       |	    Mean(y)     |	    SD(y)       |	    Mean(z)     |	  SD(z)
 - --------------------- |--------------  |-------------- |-------------- |-------------- |-------------- |--------------
 - 1 _Laying	            | 0.221598244	|-0.928056469	|-0.040513953	|-0.836827406	|-0.113203554	|-0.826061402
 - 1 _Sitting            |	0.261237565	|-0.977229008	|-0.001308288	|-0.922618642	|-0.104544182	|-0.939586291
