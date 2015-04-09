@@ -39,11 +39,9 @@ Two descriptive statistics, means and standard deviations, were estimated for ea
 
 ### Tidy Data Structure
 
-The final tidy dataset is a 180 by 49 matrix with 180 rows representing signal data on 30 subjects times six activities, and 49 columns corresponding to a unique identifier for Subject/Activity records, e.g., Subject 1_Walking, as well as 48 columns for means and standard deviations on each of the eight feature vectors.
+The final tidy dataset is a 180 by 49 matrix with 180 rows representing signal data on 30 subjects times six activities, and 49 columns corresponding to a unique identifier for Subject/Activity records, e.g., Subject 1_Walking (Row 1, Col 1), as well as 48 columns for means and standard deviations on each of the eight feature vectors as follows:
 
-### Variable Names
-
-Column	|Heading	|Feature (Unit)	 	 				|Descriptive Statistic
+###Column	|Heading	|Feature (Unit)	 	 				|Descriptive Statistic
 - 2	|tBodyAcc-mean()-X	|Accelerometer,Body (radians per sec)		|Mean (x)
 - 3	|tBodyAcc-mean()-Y	|Accelerometer,Body (radians per sec)		|Mean (y)
 - 4	|tBodyAcc-mean()-Z	|Accelerometer,Body (radians per sec)		|Mean (z)
