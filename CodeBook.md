@@ -41,13 +41,66 @@ Tidy Data Structure
 
 The final tidy dataset is a 180 by 49 matrix with 180 rows representing signal data on 30 subjects times six activities, and 49 columns corresponding to a unique identifier for Subject/Activity records, e.g., Subject 1_Walking, as well as 48 columns for means and standard deviations on each of the eight feature vectors.
 
- 	Body Accelerometer (radians per second)
-- Subject_Activity      |	Mean(x)      |	SD(x)       |	Mean(y)     |	SD(y)       |	Mean(z    ) |	SD(z)
-- --------------------- |------------  |------------ |------------ |------------ |------------ |--------------
-- 1 _Laying	            |  0.221598244	|-0.928056469	|-0.040513953	|-0.836827406	|-0.113203554	|-0.826061402
-- 1 _Sitting            |	 0.261237565	|-0.977229008	|-0.001308288	|-0.922618642	|-0.104544182	|-0.939586291
-- 1 _Standing	          |  0.278917629 |-0.995759902	|-0.01613759	 |-0.973190056	|-0.110601818	|-0.979775877
-- 1 _Walking	           |  0.277330759	|-0.283740259	|-0.017383819	| 0.114461337	|-0.111148104	|-0.260027902
+Variable Names
+
+Column	Heading	Feature	 	 	Unit	Descriptive Statistic
+-2	tBodyAcc-mean()-X	Accelerometer, Body	(radians per sec)	Mean (x)
+-3	tBodyAcc-mean()-Y	Accelerometer, Body	(radians per sec)	Mean (y)
+-4	tBodyAcc-mean()-Z	Accelerometer, Body	(radians per sec)	Mean (z)
+-5	tBodyAcc-std()-X	Accelerometer, Body	(radians per sec)	Standard deviation (x)
+-6	tBodyAcc-std()-Y	Accelerometer, Body	(radians per sec)	Standard deviation (y)
+-7	tBodyAcc-std()-Z	Accelerometer, Body	(radians per sec)	Standard deviation (z)
+						
+-8	tGravityAcc-mean()-X	Accelerometer, Gravity	(radians per sec)	Mean (x)
+-9	tGravityAcc-mean()-Y	Accelerometer, Gravity	(radians per sec)	Mean (y)
+-10	tGravityAcc-mean()-Z	Accelerometer, Gravity	(radians per sec)	Mean (z)
+-11	tGravityAcc-std()-X	Accelerometer, Gravity	(radians per sec)	Standard deviation (x)
+-12	tGravityAcc-std()-Y	Accelerometer, Gravity	(radians per sec)	Standard deviation (y)
+-13	tGravityAcc-std()-Z	Accelerometer, Gravity	(radians per sec)	Standard deviation (z)
+						
+-14	tBodyAccJerk-mean()-X	Accelerometer, Body, Jerk	(radians per sec)	Mean (x)
+-15	tBodyAccJerk-mean()-Y	Accelerometer, Body, Jerk	(radians per sec)	Mean (y)
+-16	tBodyAccJerk-mean()-Z	Accelerometer, Body, Jerk	(radians per sec)	Mean (z)
+-17	tBodyAccJerk-std()-X	Accelerometer, Body, Jerk	(radians per sec)	Standard deviation (x)
+-18	tBodyAccJerk-std()-Y	Accelerometer, Body, Jerk	(radians per sec)	Standard deviation (y)
+-19	tBodyAccJerk-std()-Z	Accelerometer, Body, Jerk	(radians per sec)	Standard deviation (z)
+						
+-20	tBodyGyro-mean()-X	Gyroscope, Body		(radians per sec)	Mean (x)
+-21	tBodyGyro-mean()-Y	Gyroscope, Body		(radians per sec)	Mean (y)
+-22	tBodyGyro-mean()-Z	Gyroscope, Body		(radians per sec)	Mean (z)
+-23	tBodyGyro-std()-X	Gyroscope, Body		(radians per sec)	Standard deviation (x)
+-24	tBodyGyro-std()-Y	Gyroscope, Body		(radians per sec)	Standard deviation (y)
+-25	tBodyGyro-std()-Z	Gyroscope, Body		(radians per sec)	Standard deviation (z)
+						
+-26	tBodyGyroJerk-mean()-X	Gyroscope, Body, Jerk	(radians per sec)	Mean (x)
+-27	tBodyGyroJerk-mean()-Y	Gyroscope, Body, Jerk	(radians per sec)	Mean (y)
+-28	tBodyGyroJerk-mean()-Z	Gyroscope, Body, Jerk	(radians per sec)	Mean (z)
+-29	tBodyGyroJerk-std()-X	Gyroscope, Body, Jerk	(radians per sec)	Standard deviation (x)
+-30	tBodyGyroJerk-std()-Y	Gyroscope, Body, Jerk	(radians per sec)	Standard deviation (y)
+-31	tBodyGyroJerk-std()-Z	Gyroscope, Body, Jerk	(radians per sec)	Standard deviation (z)
+
+-32	fBodyAcc-mean()-X	Accelerometer, Body	(Hertz)	Mean (x)
+-33	fBodyAcc-mean()-Y	Accelerometer, Body	(Hertz)	Mean (y)
+-34	fBodyAcc-mean()-Z	Accelerometer, Body	(Hertz)	Mean (z)
+-35	fBodyAcc-std()-X	Accelerometer, Body	(Hertz)	Standard deviation (x)
+-36	fBodyAcc-std()-Y	Accelerometer, Body	(Hertz)	Standard deviation (y)
+-37	fBodyAcc-std()-Z	Accelerometer, Body	(Hertz)	Standard deviation (z)
+						
+-38	fBodyAccJerk-mean()-X	Accelerometer, Body, Jerk	(Hertz)	Mean (x)
+-39	fBodyAccJerk-mean()-Y	Accelerometer, Body, Jerk	(Hertz)	Mean (y)
+-40	fBodyAccJerk-mean()-Z	Accelerometer, Body, Jerk	(Hertz)	Mean (z)
+-41	fBodyAccJerk-std()-X	Accelerometer, Body, Jerk	(Hertz)	Standard deviation (x)
+-42	fBodyAccJerk-std()-Y	Accelerometer, Body, Jerk	(Hertz)	Standard deviation (y)
+-43	fBodyAccJerk-std()-Z	Accelerometer, Body, Jerk	(Hertz)	Standard deviation (z)
+						
+-44	fBodyGyro-mean()-X	Gyroscope, Body		(Hertz)	Mean (x)
+-45	fBodyGyro-mean()-Y	Gyroscope, Body		(Hertz)	Mean (y)
+-46	fBodyGyro-mean()-Z	Gyroscope, Body		(Hertz)	Mean (z)
+-47	fBodyGyro-std()-X	Gyroscope, Body		(Hertz)	Standard deviation (x)
+-48	fBodyGyro-std()-Y	Gyroscope, Body		(Hertz)	Standard deviation (y)
+-49	fBodyGyro-std()-Z	Gyroscope, Body		(Hertz)	Standard deviation (z)
+
+
 
 
 
