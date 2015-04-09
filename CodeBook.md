@@ -1,4 +1,4 @@
-Study Design
+### Study Design
 
 Human activity recognition using smartphones experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities: i) WALKING, ii) WALKING_UPSTAIRS, iii) WALKING_DOWNSTAIRS, iv) SITTING, v) STANDING, and vi) LAYING, wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.1
 The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers (21/30) were selected for generating the training data and 30% (3/30) the test data. The Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living includes the following files:
@@ -17,7 +17,7 @@ The following raw data files are available for train.txt and test files. Their d
 - 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
  
-Feature Selection (feature_info.txt)
+### Feature Selection (feature_info.txt)
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. The time-domain signals (prefix 't') were captured at a constant rate of 50 Hz. They were filtered using a median filter and a 3rd order low-pass Butterworth filter with a corner frequency of 20 Hz to remove noise.  
 
@@ -37,11 +37,11 @@ Two descriptive statistics, means and standard deviations, were estimated for ea
 - a)	mean() and
 - b)	std().
 
-Tidy Data Structure
+### Tidy Data Structure
 
 The final tidy dataset is a 180 by 49 matrix with 180 rows representing signal data on 30 subjects times six activities, and 49 columns corresponding to a unique identifier for Subject/Activity records, e.g., Subject 1_Walking, as well as 48 columns for means and standard deviations on each of the eight feature vectors.
 
-Variable Names
+### Variable Names
 
 Column	|Heading	|Feature (Unit)	 	 				|Descriptive Statistic
 - 2	|tBodyAcc-mean()-X	|Accelerometer,Body (radians per sec)		|Mean (x)
