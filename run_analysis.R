@@ -77,9 +77,7 @@ Mean_SD <- cbind(Mean,SD)
 dim(Mean_SD)
 Subject_Activity <- read.table(file.path("C:","Users","d2i2k","Documents","data","subject_activity.txt"))
 dim(Subject_Activity)
-Subject_Label <- Subject_Activity[cbind(2:10300),3]
-length(Subject_Label)
-tidy <- cbind(Subject_Label,Mean_SD)
+tidy <- cbind(Subject_Activity,Mean_SD)
 dim(tidy)
 library(reshape2)
 B <- melt(tidy)
@@ -88,7 +86,7 @@ B <- melt(tidy)
 # Step 5. Calculate averages for each variable by subject and activity.
 
 '''{r}
-tidyData <- dcast(B, Subject_Label ~ variable, fun.aggregate=mean)
+tidyData <- dcast(B, Subject_Activity ~ variable, fun.aggregate=mean)
 dim(tidyData)
 write.table(tidyData, file.path("C:","Users","d2i2k","Documents","data",”tidyData.txt"), row.name=FALSE)
 '''
