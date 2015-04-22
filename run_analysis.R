@@ -46,21 +46,24 @@ names(Data) <- features[, 2]
 '''{r}
 grep("BodyBody()", features[,2])
 tidyData <- Data[c(1:515,555:561)]
+dim(tidyData)
 '''
 
 # Step 3b. Assign variable names to columns of tidyData using the tidyfeatures vector.
 
 '''{r}
-tidyfeatures <- features[c(1:515,555:561),]
-names(tidyData) <- tidyfeatures[, 2] 
+tidyFeatures <- features[c(1:515,555:561),]
+dim(tidyFeatures)
+names(tidyData) <- tidyFeatures[, 2] 
 ''''
 
 # Step 4a.  Index columns of tidyData to subset 24 mean columns for each measurement.
 
 '''{r}
-meanIndex <- grep("mean()", tidyfeatures[,2])
-meanFreqIndex <- grep("meanFreq()", tidyfeatures[,2])
+meanIndex <- grep("mean()", tidyFeatures[,2])
+meanFreqIndex <- grep("meanFreq()", tidyFeatures[,2])
 Mean <- tidyData[, c(1:3,41:43,81:83,121:123,161:163,266:268,345:347,424:426)]
+dim(Mean)
 '''
 
 # Step 4b.  Index columns of tidyData to subset 24 standard deviation (SD) columns for each measurement
@@ -68,6 +71,7 @@ Mean <- tidyData[, c(1:3,41:43,81:83,121:123,161:163,266:268,345:347,424:426)]
 '''{r}
 stdIndex <- grep("std()", tidyfeatures[,2])
 SD <- tidyData[, c(4:6,44:46,84:86,124:126,164:166,269:271,348:350,427:429)]
+dim(SD)
 '''
 
 # Step 4c. Merge descriptive statistics with subjects and activities by combining Mean and SD subsets.
@@ -75,22 +79,22 @@ SD <- tidyData[, c(4:6,44:46,84:86,124:126,164:166,269:271,348:350,427:429)]
 '''{r}
 Mean_SD <- cbind(Mean,SD)
 dim(Mean_SD)
-Subject_Activity <- read.table(file.path("C:","Users","d2i2k","Documents","data","subject_activity.txt"))
+Subject_Activity <- read.csv(file.path("C:","Users","d2i2k","Documents","data","subject_activity.csv"))
 dim(Subject_Activity)
 Subject_Activity[,1] <- as.character(Subject_Activity[,1])
-colnames(Subject_Activity)[1] <- 'Subject'
-colnames(Subject_Activity)[2] <- 'Activity'
 tidy <- cbind(Subject_Activity,Mean_SD)
 dim(tidy)
-library(reshape2)
-B <- melt(tidy)
 '''
 
 ### Step 5. Calculate averages for each variable by subject and activity.
 
 '''{r}
-tidyData <- dcast(B, Subject_Activity ~ variable, fun.aggregate=mean)
-dim(tidyData)
+library(dplyr)
+library(reshape2)
+tidyData <-
+  tidy %>%
+  melt() %>%
+  dcast(Subject_Activity ~ variable, fun.aggregate=mean) 
 write.table(tidyData, file.path("C:","Users","d2i2k","Documents","data","tidyData.txt"),row.name=FALSE)
 '''
 
