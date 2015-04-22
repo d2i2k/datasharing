@@ -2,7 +2,7 @@
 ---
 title: "run_analysis.R"
 author: "d2i2k"
-date: "Wednesday, April 8, 2015"
+date: "Tuesday, April 21, 2015"
 output: html_document
 ---
 
@@ -69,7 +69,7 @@ dim(Mean)
 # Step 4b.  Index columns of tidyData to subset 24 standard deviation (SD) columns for each measurement
 
 '''{r}
-stdIndex <- grep("std()", tidyfeatures[,2])
+stdIndex <- grep("std()", tidyFeatures[,2])
 SD <- tidyData[, c(4:6,44:46,84:86,124:126,164:166,269:271,348:350,427:429)]
 dim(SD)
 '''
@@ -95,6 +95,7 @@ tidyData <-
   tidy %>%
   melt() %>%
   dcast(Subject_Activity ~ variable, fun.aggregate=mean) 
+  
 write.table(tidyData, file.path("C:","Users","d2i2k","Documents","data","tidyData.txt"),row.name=FALSE)
 '''
 
